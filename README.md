@@ -4,7 +4,7 @@ Project Repository
 ## Project Description
 This program will collect data from an online webpage and store it in a database. Users will be able to sign-up, login, and access their own stored data. 
 
-Key steps
+Application functionality:
 1. User needs to be able to sign in /create an account - > if the application can directly sign into reddit/twitter
 2. User needs to be able to input what they want to scrape for: input a key term, key terms, time frame, POST and/or COMMENTS.
 3. The application will take user information, key term, time frame and "scrape" the data.
@@ -29,17 +29,33 @@ Takes scrapper output and stores in a database
 Scrapper side of things
 Accepts data from Front-End
 Connects to reddit/twitter
-
+Searches through posts/comments
+Takes post/comment data, parse, and store into an object.
+Sends found object into a database
 
 ### GUI
 Integrate with front end
 Displays to users login/signup screen - need to login to Reddit/Twitter account.
 Once logged in, user can choose between searching, or looking at previous search results
-For searching, ask for key-term/key-terms, POST and/or COMMENTS, time frame (for starters, do one day
+For searching, ask for key-term/key-terms, POST and/or COMMENTS, time frame (for starters, do one day)
 
 
-## Project Goals
+## Project Milestones
+Database/Server chosen
+Front-end - parameters defined
+Back-end - parameters defined
+
+Scraper class implemented
+Reddit scrapper subclass implemented
+Database - user login implemented
+Database - user search implemented
+Database - user search results implemented
 
 
 ## Member Roles
+David -
+Eric -
+Prin - GUI
+Van - 
+Yuzhe -
 
