@@ -54,8 +54,12 @@ Database - user search results implemented
 
 ## Member Roles
 David -
+
 Eric -
+
 Prin - GUI
+
 Van - 
+
 Yuzhe -
 
