@@ -41,25 +41,26 @@ For searching, ask for key-term/key-terms, POST and/or COMMENTS, time frame (for
 
 
 ## Project Milestones
-Database/Server chosen
-Front-end - parameters defined
-Back-end - parameters defined
 
-Scraper class implemented
-Reddit scrapper subclass implemented
-Database - user login implemented
-Database - user search implemented
-Database - user search results implemented
+Web Server - Server can Listen
+Web Server - Server creates processes from Listen
+Web Server - Server can differentiate between post from scraper and user request
+Web Server - Server will produce results from user query
+
+Scraper - Scraper class implemented
+Scraper - Reddit scrapper subclass implemented
+Scraper - Successfully connects to web server for post.
+Scraper - Successfully output Post object data 
 
 
 ## Member Roles
-David -
+David - Web Server
 
-Eric -
+Eric - Scraper
 
-Prin - GUI
+Prin - Web Server
 
-Van - 
+Van - Web Server
 
-Yuzhe -
+Yuzhe - Project Management, Scraper
 
