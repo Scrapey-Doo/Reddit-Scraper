@@ -34,7 +34,7 @@ class RedditScraper(Scraper):
         subreddit = reddit.subreddit(self.searchTerm)
         hot_subreddit = subreddit.hot(limit=10)
 
-        for submission in subreddit.hot(limit=10):
+        for submission in hot_subreddit:
             print(submission.title, submission.id)
 
 
