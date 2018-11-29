@@ -5,39 +5,40 @@ Project Repository
 This program will collect data from an online webpage and store it in a database. Users will be able to sign-up, login, and access their own stored data. 
 
 Application functionality:
-1. User needs to be able to sign in /create an account - > if the application can directly sign into reddit/twitter
-2. User needs to be able to input what they want to scrape for: input a key term, key terms, time frame, POST and/or COMMENTS.
-3. The application will take user information, key term, time frame and "scrape" the data.
-4. Application will take each Post/comment and create an object based off of it.
-5. Application will send created object to a database/server
-6. GUI should display the objects stored in the database.
-7. Users should be able to search/sort/delete the contents in the database
-8. Users should be able to click on the post/comment (object will have a link) in the object to access the post from the source.
+1. User needs to be able to sign in /create an account to use this client application
+2. User needs to be able to input what they want to scrape for: Twitter or Reddit, as well as what to scrape for(Reddit subreddit, Twitter User's posts(?), into the client and the client will send that information to the server
+3. The server will take the search term and type and "scrape" the data.
+4. Server will take each Post/comment and create an object based off of it.
+5. Server will save post object into a data structure (linked list)
+6. Server will serialize the data structure into a file and send it back to the client
+7. Client will take the serialized data and deserialize it.
+8. Users should be able access the data structure and search through it and display information
 
 
 
 ## Project Parts
-### Front-End:
-Database side of things. 
-Stores Users. Accepts input from GUI(login, search terms, etc)
-User signs in to reddit/twitter here.
-Displays database. Allows user to 
-Takes scrapper output and stores in a database
+### Client:
+On boot:
+Asks user to log in/sign up
+sends user credentials to verify/add
+waits for server to respond with valid/invalid credentials.
+Once valid:
+Asks user what site to scrape (reddit/twitter)
+Asks what to scrape for(reddit - Subreddits, twitter - certain users posts)
+waits for erver to respond with data
+Asks user what they want to do with data (search posts, list all posts)
 
+### Server
+Listens for connection
+Once a connection is made, create new thread
 
-### Back-End
-Scrapper side of things
-Accepts data from Front-End
-Connects to reddit/twitter
-Searches through posts/comments
-Takes post/comment data, parse, and store into an object.
-Sends found object into a database
-
-### GUI
-Integrate with front end
-Displays to users login/signup screen - need to login to Reddit/Twitter account.
-Once logged in, user can choose between searching, or looking at previous search results
-For searching, ask for key-term/key-terms, POST and/or COMMENTS, time frame (for starters, do one day)
+On thread,
+verify user information or logs them in
+waits for user to send what they want to scrape for
+run scraping method
+serialize found data
+sends back to user
+Disconnects from user
 
 
 ## Project Milestones
@@ -54,13 +55,13 @@ Scraper - Successfully output Post object data
 
 
 ## Member Roles
-David - Web Server
+David - Help set up client server connection. Help build multi-threading
 
-Eric - Scraper
+Eric - Scraper, server functionalities
 
-Prin - Web Server
+Prin - Set up user sign up functions for both client and server side
 
-Van - Web Server
+Van - Multi-threading and synchronization
 
-Yuzhe - Project Management, Scraper
+Yuzhe - Project Management, Scraper, server functionalities
 
