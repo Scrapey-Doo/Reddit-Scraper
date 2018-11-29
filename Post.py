@@ -15,5 +15,5 @@ class Post:
         return self.author
 
     def __repr__(self):
-        return
+        return "Title: " + self.getTitle() + " Author: " + self.getAuthor() + " Likes: " + self.getLikes()
 
