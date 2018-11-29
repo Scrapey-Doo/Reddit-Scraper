@@ -44,13 +44,19 @@ Disconnects from user
 ## Project Milestones
 
 Web Server - Server can Listen
+
 Web Server - Server creates processes from Listen
+
 Web Server - Server can differentiate between post from scraper and user request
+
 Web Server - Server will produce results from user query
 
 Scraper - Scraper class implemented
+
 Scraper - Reddit scrapper subclass implemented
+
 Scraper - Successfully connects to web server for post.
+
 Scraper - Successfully output Post object data 
 
 
