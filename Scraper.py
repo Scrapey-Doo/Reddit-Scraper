@@ -1,5 +1,5 @@
 #! usr/bin/env python3
-
+from __future__ import print_function
 import datetime as dt
 import pandas as pd
 import praw
@@ -10,16 +10,22 @@ from Post import Post
 class Scraper:
     def __init__(self, term_):
         self.searchTerm = term_ # save search term. For reddit, this is the subreddit. For twitter, this is the user(?)
+        self.submissions = list() # list of submissions
 
     def runScrapper(self): # function to override for polymorphism
         self.message = "No Scraper defined"
         return print(self.message)
 
+    def printSubmissions(self):
+        print(*self.submissions, sep='\n')
+
+
+
 
 class RedditScraper(Scraper):
     def __init__(self, term_):
         super().__init__(term_) #use parent search term
-        self.submissions = list()
+
 
     def runScrapper(self):
         print(self.searchTerm)
@@ -37,11 +43,12 @@ class RedditScraper(Scraper):
         hot_subreddit = subreddit.hot(limit=10)
 
         for submission in hot_subreddit:
-
             onesub = Post(submission.title, submission.author, submission.ups)
-            print(onesub)
+            self.submissions.append(onesub)
+
             #print(submission.title, submission.id)
-            self.submissions.append(submission)
+        self.printSubmissions() #prints to console the submissions found
+
 
 
 
