@@ -3,6 +3,7 @@ from __future__ import print_function
 import datetime as dt
 import pandas as pd
 import praw
+import pickle
 
 from Post import Post
 
@@ -16,8 +17,8 @@ class Scraper:
         self.message = "No Scraper defined"
         return print(self.message)
 
-    def printSubmissions(self):
-        print(*self.submissions, sep='\n')
+    def printSubmissions(self, a):
+        print(*a, sep='\n')
 
 
 
@@ -47,9 +48,17 @@ class RedditScraper(Scraper):
             self.submissions.append(onesub)
 
             #print(submission.title, submission.id)
-        self.printSubmissions() #prints to console the submissions found
+        #self.printSubmissions() #prints to console the submissions found
 
+        print("picking submissions")
+        pickled_subs = pickle.dumps(self.submissions)
 
+        print("pickled submissions")
+        print("unpickling submissions")
+
+        unpickled_subs = pickle.loads(pickled_subs)
+
+        self.printSubmissions(unpickled_subs)
 
 
 
