@@ -12,12 +12,14 @@ class Scraper:
         self.searchTerm = term_ # save search term. For reddit, this is the subreddit. For twitter, this is the user(?)
 
     def runScrapper(self): # function to override for polymorphism
-        self.message = "Running Program"
+        self.message = "No Scraper defined"
+        return print(self.message)
 
 
 class RedditScraper(Scraper):
     def __init__(self, term_):
         super().__init__(term_) #use parent search term
+        self.submissions = list()
 
     def runScrapper(self):
         print(self.searchTerm)
@@ -35,9 +37,14 @@ class RedditScraper(Scraper):
         hot_subreddit = subreddit.hot(limit=10)
 
         for submission in hot_subreddit:
-            print(submission.title, submission.id)
+
+            onesub = Post(submission.title, submission.author, submission.ups)
+            print(onesub)
+            #print(submission.title, submission.id)
+            self.submissions.append(submission)
 
 
 
-sc = RedditScraper('Games')
-sc.runScrapper()
+
+
+
