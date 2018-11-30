@@ -1,5 +1,5 @@
 class Post:
-    def __init__(self, title_, likes_, author_):
+    def __init__(self, title_, author_, likes_):
         self.title = title_
         self.likes = likes_
         self.author = author_
@@ -15,5 +15,5 @@ class Post:
         return self.author
 
     def __repr__(self):
-        return "Title: " + self.getTitle() + " Author: " + self.getAuthor() + " Likes: " + self.getLikes()
+        return "Title: " + str(self.getTitle()) + " Author: " + str(self.getAuthor()) + " Likes: " + str(self.getLikes())
 
