@@ -1,3 +1,8 @@
+# CSCI 3800 Final Project
+# Group: ScrapeyDo
+# Group leader: Yuzhe Lu
+# Group members: Yuzhe Lu, David Oligney, Prinn Prinyanut, Eric Slick, Patrick Tate
+
 class Post:
     def __init__(self, title_, author_, likes_):
         self.title = title_
